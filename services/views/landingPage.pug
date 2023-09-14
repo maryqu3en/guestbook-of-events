@@ -3,6 +3,45 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Landing page
-    body 
-        
+        <link rel="stylesheet" , href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> 
+        link(rel="stylesheet", href="/styles/main.css")
+        title Home page 
+    body  
+        nav 
+            a.logo(href="/")
+                img(src="/images/logo.png", alt="logo" width="40px")
+                h2 vents
+            ul.list 
+                li  
+                    a(href="/") Home
+                li 
+                    a(href="") Get started
+            .menu 
+                span.material-symbols-outlined
+                    | widgets 
+            .close 
+                span.material-symbols-outlined
+                    | close    
+            .profile 
+                span.material-symbols-outlined
+                    | account_circle
+                
+                    
+        main 
+            .description 
+                .container
+                    h1 Celebrate the Extraordinary!
+                    p Give meaning to your events let's turn them into unforgettable masterpieces. From grand product launches to exclusive galas, 
+                    p corporate anniversaries to cutting-edge conferences, we've got it all. Dive into a world of possibilities, and make your mark with us!Join our event community and be a part of the conversation .
+                    p You can also share your thoughts, ideas, and feedback on events that inspire you. Together, let's shape unforgettable experiences and celebrate the power of your insights!
+                    .btns
+                        button(type="submit") 
+                            a(href="/login")  Login  
+                        button(type="submit") 
+                            a(href="/register") Register  
+            .image
+                img(src="/images/wedding.jpg", alt="" width="350px" height="240px")
+                img(src="/images/graduation.jpg", alt="" width="350px" height="240px")
+                img(src="/images/scientific-event.jpg", alt="" width="350px" height="240px")
+                img(src="/images/mom-day.jpg", alt="" width="350px" height="240px")    
+        script(src="/scripts/script.js")

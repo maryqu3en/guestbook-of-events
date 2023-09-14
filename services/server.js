@@ -13,6 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.render('landingPage');
+  });
+  
+
 app.get("/login", (req, res) => {
   return res.render("login");
 });
