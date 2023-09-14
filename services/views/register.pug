@@ -3,5 +3,32 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles/register.css")
         title register page
-    body 
+    body
+        .register-container
+            .welcome-message
+                h2 Welcome to Our Project
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante vel ligula feugiat hendrerit at sed justo.
+            .register-form
+                h2 Register now!
+                form(action="/Auth/create", method="post")
+
+                .input-row 
+                    .input-group
+                        label(for="name") Name
+                        input(type="text", id="name", name="name", placeholder="Enter your full name", required)
+                    .input-group
+                        label(for="email") Image
+                        input(type="text", id="image", name="image", placeholder="Enter image URL", required)
+                .input-row
+                    .input-group
+                        label(for="email") Email
+                        input(type="text", id="email", name="email", placeholder="Enter your email", required)
+                    .input-group
+                        label(for="password") Password
+                        input(type="password", id="password", name="password", placeholder="Create password", required)
+                button(type="submit") Register
+                .login-link
+                    p Already have an account? 
+                    a(href="/login") Log in

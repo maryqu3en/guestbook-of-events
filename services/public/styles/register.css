@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
+
+:root {
+  /* Colors */
+
+  --Desaturated-Red: rgb(206, 151, 151);
+  --Dark-Grayish-Red: rgb(65, 58, 58);
+  --Costume-green-color: #155263;
+  --Desaturated-gray-color: rgb(133, 132, 130);
+
+  /* Fonts */
+
+  --Font-size: 16px;
+  --Font-Family: "Josefin Sans", sans-serif;
+  --Font-Weight-normal: 300;
+  --Font-Weight-medium: 400;
+  --Font-Weight-bold: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-size: var(--Font-size);
+  font-family: var(--Font-Family);
+  /* background: linear-gradient(35deg,rgba(61, 88, 73, 0.5) 0%,rgba(226, 226, 226, 0.8) 25%, rgba(246, 111, 131, 0.2) 85%, rgba(174, 185, 249, 0.1) 100%); */
+  background-image: url(/images/sebastian-svenson-LpbyDENbQQg-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  backdrop-filter: blur(5px);
+  background-color: rgba(178, 157, 157, 0.453);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  max-width: 1000px;
+}
+
+.register-form {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.welcome-message {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  background-color: rgba(30, 83, 91, 0.789);
+  backdrop-filter: blur(10px);
+  color: #ffb3ab;
+  border-radius: 5px;
+}
+
+.register-form h2,
+.welcome-message h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.welcome-message h2 {
+  color: #ffb3ab;
+}
+
+.register-form h2 {
+  color: #1e535b;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group {
+  flex: 1;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #b67a7a;
+  width: 95%;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.login-link a {
+  color: #1e535b;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 650px) {
+  .register-form h2,
+  .welcome-message h2 {
+    font-size: 2rem;
+  }
+
+  .register-container {
+    flex-direction: column;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+}
