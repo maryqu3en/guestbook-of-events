@@ -1,1 +1,1 @@
-{"users":[],"posts":[]}
+{"users":[{"id":12062,"email":"lmm@gmail.com","password":"dsd","name":"mad","image":"jhg"},{"id":62458,"email":"hi@h.vo","password":"kjhg","name":"KUWANA","image":"8123"},{"id":74480,"email":"lol@g.c","password":"lkjgf","name":"Mary","image":"ghg"}],"posts":[{"id":"12062","text":"mad","image":"jhg","postId":5907,"comments":[{"commentId":1066,"comment":"mad"}]}]}
