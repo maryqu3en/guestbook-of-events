@@ -96,11 +96,23 @@
         width: 100%;
         padding: 10px;
         position: relative;
-        
-        & >  h2{
-           font-size: 2rem;
-           color: var(--Costume-green-color);
+        & .title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &   h2{
+                font-size: 2rem;
+                color: var(--Costume-green-color);
+             }
+            & span{
+                cursor: pointer;
+            } 
         }
+        &   h2{
+            font-size: 2rem;
+            color: var(--Costume-green-color);
+         }
+        
         & .comment{
             margin-top:15px;
             display: flex;
@@ -120,7 +132,6 @@
                 align-items: start;
                 gap: 10px;
                 border-radius: 50%;
-              
                 font-size: 14px;
                 cursor: pointer;
                 &:hover{
@@ -216,7 +227,7 @@
     }
 }
 
-.account{
+.account,.update-delete{
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -238,6 +249,15 @@
       flex-direction: column;
       gap: .5rem;
       padding: 0 1rem;
+      & span{
+        font-size: 2rem;
+        cursor:pointer;
+        height: 30px;
+        width: 30px;
+        align-self: flex-end;
+        margin-top: 5px;
+    }
+
       & > img{
         margin:10px auto;
         border-radius: 50%;
@@ -253,18 +273,7 @@
       }
     }
 
-    & span{
-        font-size: 2rem;
-        cursor:pointer;
-        height: 30px;
-        width: 30px;
-        align-self: flex-end;
-        margin-top: 5px;
-        &:hover{
-            border-radius: 50%;
-            background-color: #fff;
-        }
-    }
+   
       & .btns2{
         display: flex;
         justify-content: center;
@@ -279,19 +288,19 @@
         font-size: 18px;
         text-transform: uppercase;
         cursor: pointer;
-        border-radius: 30px;
-        color: white;
-        
-       & a{
-        color: white;
-        text-decoration: none;
+        border-radius: 30px;  
+        & a{
+            text-decoration: none;
+            color: white;
         }
         &:hover{
             background-color: #e0c4c3;
+            color: var(--Costume-green-color);
         }
       }
     }
 }
+
 }
 
 @media (max-width:650px) {
@@ -346,7 +355,7 @@
     
     }
 
-    .account{
+    .account,.update-delete {
         &  .container{
             width: 90%;
           & img{
@@ -361,5 +370,6 @@
             }
     }
 }
+
 
 }

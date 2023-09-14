@@ -3,5 +3,24 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles/login.css")
         title login page
-    body 
+    body
+        main
+             .login-container
+                 .login-form
+                     h2 Login to your account!
+                     form(action="/Auth/check", method="post")
+                     .input-group
+                         label(for="email") Email
+                         input(type="text", id="email", name="email", placeholder="Enter your email", required)
+                     .input-group
+                         label(for="password") Password
+                         input(type="password", id="password", name="password", placeholder="Enter your password", required)
+                     button(type="submit") Login
+                     .signup-link
+                         p Don't have an account?
+                         a(href="/register") Sign up
+                 .welcome-message
+                     h2 Welcome to Our Project
+                     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante vel ligula feugiat hendrerit at sed justo.
