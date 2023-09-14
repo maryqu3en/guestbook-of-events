@@ -1,1 +1,28 @@
-{"users":[{"id":83020,"email":"lmm@gmail.com","password":"dsd","name":"fd","image":"dd"}],"posts":[{"id":"83020","text":"new one","postId":8105}]}
+{
+    "users": [
+      {"id": "83020", "email": "user1@gmail.com", "password": "password1", "name": "User1", "image": "https://edunewsnetwork.files.wordpress.com/2021/07/images-89.jpeg"},
+      {"id": "83021", "email": "user2@gmail.com", "password": "password2", "name": "User2", "image": "https://edunewsnetwork.files.wordpress.com/2021/07/images-89.jpeg"}
+      
+    ],
+    "posts": [
+      {
+        "id": "83020",
+        "text": "Post 1",
+        "image": "https://i.pinimg.com/564x/7e/0f/a1/7e0fa1801254e4a6b02c24e297986da3.jpg",
+        "postId": 8105
+      },
+      {
+        "id": "83021",
+        "text": "Post 2",
+        "image": "https://i.pinimg.com/564x/e9/18/37/e918372be99f1f610d71d28c00043ac8.jpg",
+        "postId": 8106
+      }
+    ],
+    "comments": [
+        {"id":"83020","comment":"Supper boy congratulations","name":""},
+        {"id":"83020","comment":"Supper, congratulations","name":""},
+        {"id":"83020","comment":"congratulations","name":""},
+        {"id":"83021","comment":"perfect wedding","name":""},
+        {"id":"83021","comment":"Congratulations !!!","name":""}
+    ]
+  }

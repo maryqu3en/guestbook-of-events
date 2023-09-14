@@ -3,5 +3,43 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Personnel Events page
+        title Document
     body 
+    main.posts
+        each post, index in posts
+        .Post
+        .post
+            .post-content
+                .profile
+                    img(src=users[index].image, alt=users[index].name + " Image" )
+                    p=users[index].name
+            img(src=post.image, alt='Post Image')
+          p=post.text
+        .comment-imojis
+          .imojis
+            .left
+              img(src="/images/hurt.png", alt="hurt" width="30px" height="30px")
+              .reactions
+                img(src="/images/like.png", alt="like" width="40px" height="40px")
+                img(src="/images/adore.png", alt="adore" width="40px" height="35x")
+                img(src="/images/haha.png", alt="haha" width="30px" height="30px")
+                img(src="/images/wow.png", alt="wow" width="40px" height="30px")
+                img(src="/images/said.png", alt="said" width="40px" height="35px")
+                img(src="/images/angry.png", alt="angry" width="30px" height="30px")
+              span.material-symbols-outlined
+                | send
+            .right
+              span.material-symbols-outlined
+                | bookmark
+              span.material-symbols-outlined
+                | maps_ugc
+      .comments
+        h2 Comments
+        each comment, commentIndex in comments[index]
+          .comment-content
+            .profile
+              img(src=users[index].image, alt=users[index].name + " Image" )
+              .texts
+                p=users[index].name
+                p=comment.comment
+    script(src="/scripts/script.js")     
