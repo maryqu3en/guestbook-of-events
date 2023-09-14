@@ -29,7 +29,6 @@ body {
   width: 100vw;
   font-size: var(--Font-size);
   font-family: var(--Font-Family);
-  /* background: linear-gradient(35deg,rgba(61, 88, 73, 0.5) 0%,rgba(226, 226, 226, 0.8) 25%, rgba(246, 111, 131, 0.2) 85%, rgba(174, 185, 249, 0.1) 100%); */
   background-image: url(/images/sebastian-svenson-LpbyDENbQQg-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -37,6 +36,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#alert-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40%;
+  width: 40%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgb(76, 104, 95);
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+#alert-msg {
+  font-size: 2rem;
 }
 
 .register-container {
@@ -107,7 +129,7 @@ input[type="password"] {
   font-size: 16px;
 }
 
-button[type="submit"] {
+button {
   background-color: #b67a7a;
   width: 95%;
   color: #fff;
@@ -116,7 +138,7 @@ button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  transition: .3s ;
+  transition: 0.3s;
 }
 
 button:hover {
