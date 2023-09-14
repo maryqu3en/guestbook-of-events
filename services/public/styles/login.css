@@ -110,6 +110,16 @@ button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: .3s ;
+}
+
+button:hover {
+  background-color: #1e535b;
+  color: #ffb3ab;
+}
+
+button:active {
+  opacity: 0.8;
 }
 
 .signup-link {
