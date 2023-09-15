@@ -18,9 +18,6 @@ Router.get("/allpost" , (req , res)=>{
     return res.render('events',{ posts: data.posts,users:data.users , userInformation : userLoged});
 })
 
-Router.get("/myEvents", (req , res)=>{
-    return res.render('myEvents', { posts: data.posts, users: data.users , userInformation : userLoged});
-})
 
 Router.get("/myEvents/:id",(req , res)=>{
     const {id} = req.params 
@@ -33,11 +30,11 @@ Router.get("/myEvents/:id",(req , res)=>{
     }
 })
 Router.get("/addEvent",(req , res)=>{
-    return res.render('createEvent',{ posts: data.posts, users: data.users });
+    return res.render('createEvent', { posts: data.posts, users: data.users , userInformation : userLoged});
 })
 
 Router.get("/updateEvent",(req , res)=>{
-    return res.render('updateEvent',{ posts: data.posts, users: data.users });
+    return res.render('updateEvent', { posts: data.posts, users: data.users , userInformation : userLoged});
 })
 
 Router.post( "/add/:id" , (req , res)=>{

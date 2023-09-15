@@ -17,11 +17,11 @@ html(lang="en")
                 li
                     a(href="/") Home
                 li
-                    a(href="/posts/myEvents") My Events
+                   a(href=`/posts/myEvents/${userInformation.id}`) My Events
                 li 
                     a(href="/posts/allpost") All Events  
             .profile 
-                img(src=users[0].image, alt=users[0].name + " Image" )
+                img(src=userInformation.image, alt=userInformation.name + " Image" )
             .menu
                 span.material-symbols-outlined
                     | widgets
@@ -31,25 +31,25 @@ html(lang="en")
 
         main.add 
             h1 Update Post
-            form(action="/posts/update", method="POST")
+            form(action=`/posts/updateEvent`, method="POST")
                 .group            
                     label(for="name") Description
-                    input(type="text", id="name", name="name", required)
+                    input(type="text", id="name", name="name" ,placeholder=post.text, required)
                 .group
                     label(for="image") Image
-                    input(type="url", id="image", name="image", required)
+                    input(type="url", id="image", name="image", placeholder=post.image, required)
                 button.btn(type="submit") Update
         .account 
             .container
                 span.material-symbols-outlined
                     | close
-                img(src=users[0].image, alt="user image")
+                img(src=userInformation.image, alt=userInformation.name + " Image" )
                 h2 Username
-                    p=users[0].name 
+                    p=userInformation.name 
                 h2 Email  
-                    p=users[0].email 
+                    p=userInformation.email 
                 h2 Password
-                    p=users[0].password 
+                    p=userInformation.password 
                 .btns2  
                     button(type="submit")
                         a(href="/") 
