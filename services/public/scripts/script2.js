@@ -1,6 +1,6 @@
 const profile = document.querySelector('nav .profile');
 const account = document.querySelector('.account');
-const closeSpan = document.querySelector('.container form span');
+const closeSpan = document.querySelector('.account .container span');
 let isClicked=true;
 
 function toggleAccount(){
