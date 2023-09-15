@@ -33,7 +33,7 @@ html(lang="en")
             form(action=`/posts/add/${userInformation.id}`, method="POST")
                 .group            
                     label(for="name") Description
-                    input(type="text", id="name", name="name", placeholder="Enter a description" required)
+                    input(type="text", id="text", name="text", placeholder="Enter a description" required)
                 .group
                     label(for="image") Image
                     input(type="url", id="image", name="image", placeholder="Enter image URL" required)

@@ -56,6 +56,20 @@ html(lang="en")
                                 | bookmark
                             span.material-symbols-outlined
                                 | maps_ugc
+            .update-delete 
+                .container
+                  span.material-symbols-outlined
+                    | close
+                  .btns2  
+                    button(type="submit")
+                      a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
+                        span.material-symbols-outlined
+                                | edit
+                    button(type="submit")
+                      form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
+                        span.material-symbols-outlined
+                            | delete 
+                                  
             .comments 
                 .title 
                   h2 Comments
@@ -114,20 +128,7 @@ html(lang="en")
                 span.material-symbols-outlined
                                 | edit 
 
-    .update-delete 
-        .container
-            span.material-symbols-outlined
-                | close
-            .btns2  
-                button(type="submit")
-                    a(href=`/posts/updateEvent/${userInformation.id}`) 
-                        span.material-symbols-outlined
-                                | edit
-                button(type="submit")
-                      form(action=`/posts/delete/` , method="DELETE")  
-                        span.material-symbols-outlined
-                            | delete 
-            
+    
 
     script(src="/scripts/script.js")
     script(src="/scripts/script2.js")

@@ -59,16 +59,13 @@
   "posts": [
     {
       "id": "83020",
-      "text": "Wedding",
-      "image": "https://i.pinimg.com/564x/7e/0f/a1/7e0fa1801254e4a6b02c24e297986da3.jpg",
+      "text": "messi10",
+      "image": "https://i.pinimg.com/564x/27/d7/a4/27d7a4fb0714133c8dc49bbbbf3013f4.jpg",
       "postId": 8105,
       "comments": [
         {
           "commentId": 8105,
           "comment": "Comment 1 for Post 1"
-        },
-        {
-          "commentId": 5903
         },
         {
           "commentId": 8032,
@@ -79,43 +76,14 @@
           "comment": "congratulations"
         },
         {
-          "commentId": 6316,
-          "comment": "congratulations"
-        },
-        {
-          "commentId": 7750,
-          "comment": "congratulations"
-        },
-        {
           "commentId": 9487,
-          "comment": "hello"
-        },
-        {
-          "commentId": 3325,
-          "comment": "nnn"
-        },
-        {
-          "commentId": 6016,
-          "comment": "nnn"
-        },
-        {
-          "commentId": 6502,
-          "comment": "mmm"
-        },
-        {
-          "commentId": 7010,
-          "comment": "mmm"
-        },
-        {
-          "commentId": 6549,
           "comment": "Hi"
         }
       ]
     },
     {
       "id": "83021",
-      "text": "Post 2",
-      "image": "https://i.pinimg.com/564x/e9/18/37/e918372be99f1f610d71d28c00043ac8.jpg",
+      "image": "https://i.pinimg.com/564x/27/d7/a4/27d7a4fb0714133c8dc49bbbbf3013f4.jpg",
       "postId": 8106,
       "comments": [
         {
@@ -138,7 +106,8 @@
           "commentId": 268,
           "comment": "Great!!"
         }
-      ]
+      ],
+      "text": "messi10"
     },
     {
       "id": "98699",
@@ -174,22 +143,30 @@
     {
       "id": "98699",
       "image": "https://i.pinimg.com/564x/27/d7/a4/27d7a4fb0714133c8dc49bbbbf3013f4.jpg",
-      "postId": 8657
+      "postId": 6452,
+      "comments": [
+        {
+          "commentId": 2174,
+          "comment": "Great!!"
+        }
+      ]
     },
     {
       "id": "98699",
-      "image": "https://i.pinimg.com/564x/27/d7/a4/27d7a4fb0714133c8dc49bbbbf3013f4.jpg",
-      "postId": 5521
+      "image": "https://i.pinimg.com/564x/81/e4/d1/81e4d121744f51a00c9c5227a9cfce22.jpg",
+      "postId": 2046,
+      "comments": [
+        {
+          "commentId": 5444,
+          "comment": "Woow!!!"
+        }
+      ]
     },
     {
       "id": "98699",
+      "text": "messi10",
       "image": "https://i.pinimg.com/564x/27/d7/a4/27d7a4fb0714133c8dc49bbbbf3013f4.jpg",
-      "postId": 2184
-    },
-    {
-      "id": "98699",
-      "image": "https://i.pinimg.com/564x/27/d7/a4/27d7a4fb0714133c8dc49bbbbf3013f4.jpg",
-      "postId": 8638
+      "postId": 7058
     }
   ]
 }
