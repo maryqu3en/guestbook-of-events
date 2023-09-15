@@ -27,7 +27,8 @@ Router.post("/add/:postId", (req,res) => {
         data.posts[findPostComment].comments = [{commentId , comment}]
 
         fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
-        return res.status(200).json(data)
+        // window.location.reload();
+        return;
     } else {
         return res.status(404).json({message : "Post not found"})
     }    

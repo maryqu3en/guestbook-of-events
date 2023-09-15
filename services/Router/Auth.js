@@ -30,7 +30,7 @@ Router.post("/check",(req , res)=>{
     if (accountIndex != -1) {
         if (data.users[accountIndex].password === password) {
             data.users[accountIndex].isLoged = true
-            for (let index = 0; index < data.users.lengt; index++) {
+            for (let index = 0; index < data.users.length; index++) { //verify later !!!!!!
                 if (index != accountIndex) 
                     data.users[accountIndex].isLoged = false
             }

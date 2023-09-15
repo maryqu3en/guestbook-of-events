@@ -20,7 +20,7 @@ html(lang="en")
         li 
             a(href="/addEvent") Add events   
       .profile 
-        img(src=users[0].image, alt=users[0].name + " Image" )
+        img(src=usersInformation.image, alt=usersInformation.name + " Image" )
       .menu
         span.material-symbols-outlined
             | widgets
@@ -33,8 +33,8 @@ html(lang="en")
             .post
                 .post-content
                     .profile 
-                      img(src=users[index].image, alt=users[index].name + " Image" )
-                      p=users[index].name
+                      img(src=userInformation.image, alt=userInformation.name + " Image" )
+                      p=userInformation.name
                     img(src=post.image, alt='Post Image')
                     p=post.text
                 .comment-imojis 
@@ -64,12 +64,13 @@ html(lang="en")
                   each comment  in post.comments
                           .comment-content
                             .profile 
-                                img(src=users[index].image, alt=users[index].name + " Image" )
+                                img(src=userInformation.image, alt=userInformation.name + " Image" )  
+                                //- check here for users
                                 .texts
-                                    p=users[index].name
+                                    p=userInformation.name
                                     p=comment.comment
                             .delete-update 
-                                form(action="/deleteComment", method="post" )
+                                form(action=`/comments/delete/${post.id}/${comment.id}`, method="delete"  )
                                   span.material-symbols-outlined
                                     | close
                                 form(action="/updateComment", method="post" )    
@@ -94,13 +95,13 @@ html(lang="en")
       .container
           span.material-symbols-outlined
             | close
-          img(src=users[0].image, alt="user image")
+          img(src=userInformation.image, alt="user image")
           h2 Username
-            p=users[0].name 
+            p=userInformation.name 
           h2 Email  
-            p=users[0].email 
+            p=userInformation.email 
           h2 Password
-            p=users[0].password 
+            p=userInformation.password 
           .btns2  
             button(type="submit")
               a(href="/") 

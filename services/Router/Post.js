@@ -12,12 +12,13 @@ Router.use(cors())
 Router.use(bodyParser.urlencoded({extended : true}))
 Router.use(express.urlencoded({extended : true}))
 
+const userLoged = data.users.find(userLoged => userLoged.isLoged == true)
+
 Router.get("/allpost" , (req , res)=>{
-    return res.render('events',{ posts: data.posts,users:data.users});
+    return res.render('events',{ posts: data.posts,users:data.users , userInformation : userLoged});
 })
 
 Router.get("/myEvents", (req , res)=>{
-    const userLoged = data.users.find(userLoged => userLoged.isLoged == true)
     return res.render('myEvents', { posts: data.posts, users: data.users , userInformation : userLoged});
 })
 
@@ -26,7 +27,7 @@ Router.get("/myEvents/:id",(req , res)=>{
     const findPosts = data.posts.filter(userPost=>userPost.id==id)
     console.log(data.posts)
     if (findPosts != -1) {
-        return res.status(200).json({singlePost : findPosts})
+        return res.render('myEvents', { posts: findPosts, users: data.users , userInformation : userLoged});
     }else {
         return res.status(404).json({message : "user not found"})
     }
