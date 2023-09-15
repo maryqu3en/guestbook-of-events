@@ -303,6 +303,20 @@
 
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #155263;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #e4e9e8;
+  }
+  
+
 @media (max-width:650px) {
  
     .posts{
