@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const emailBox = document.getElementById("email");
-  const nameInput = document.getElementById("name");
-  const imageInput = document.getElementById("image");
   const passwordInput = document.getElementById("password");
   const alertBox = document.getElementById("alert-box");
   const alertMsg = document.getElementById("alert-msg");
   const closeBtn = document.getElementById("close-button");
 
-  const registerURL = "http://localhost:8080/Auth/create";
+  const loginURL = "http://localhost:8080/Auth/check";
 
   console.log("connected");
 
@@ -19,12 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     let email = emailBox.value;
-    let username = nameInput.value;
-    let imgUrl = imageInput.value;
     let password = passwordInput.value;
 
     console.log("emailbox.value");
-    if (!username || !imgUrl || !password) {
+    if (!username || !password) {
       alertMsg.textContent = "Please fill in all required fields.";
       alertBox.style.display = "flex";
       event.preventDefault();
@@ -38,34 +34,33 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
     alertBox.style.display = "none";
-    nameInput.value = "";
-    imageInput.value = "";
     passwordInput.value = "";
     emailBox.value = "";
     emailBox.style.border = "1px solid #ccc";
 
-    createAccount(username, email, password, imgUrl);
+    userCheck(email, password);
   });
 
-  async function createAccount(name, email, password, image) {
+  async function userCheck(email, password) {
     try {
-      console.log("inside createpost function");
-      const response = await fetch(`${registerURL}`, {
+      const response = await fetch(`${loginURL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password, image }),
+        body: JSON.stringify({ email, password}),
       });
       const data = await response.json();
       console.log("awaiting response");
       if (response.ok) {
-        console.log("Account created successfully");
+        console.log("Logged in successfully");
       } else {
+        alertMsg.textContent = data.message;
+        alertBox.style.display = "flex";
         console.error(data.error);
       }
     } catch (error) {
-      console.error("Error creating account:", error);
+      console.error("Error logging in:", error);
     }
   }
 

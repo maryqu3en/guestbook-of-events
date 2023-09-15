@@ -7,20 +7,23 @@ html(lang="en")
         title login page
     body
         main
-             .login-container
-                 .login-form
+            #alert-box
+                p#alert-msg alert
+                button#close-button Dismiss
+            .login-container
+                .login-form
                      h2 Login to your account!
                      form(action="/Auth/check", method="post")
-                     .input-group
-                         label(for="email") Email
-                         input(type="text", id="email", name="email", placeholder="Enter your email", required)
-                     .input-group
-                         label(for="password") Password
-                         input(type="password", id="password", name="password", placeholder="Enter your password", required)
-                     button(type="submit") Login
-                     .signup-link
-                         p Don't have an account?
-                         a(href="/register") Sign up
-                 .welcome-message
+                        .input-group
+                            label(for="email") Email
+                            input(type="text", id="email", name="email", placeholder="Enter your email")
+                        .input-group
+                            label(for="password") Password
+                            input(type="password", id="password", name="password", placeholder="Enter your password")
+                        button(type="submit") Login
+                        .signup-link
+                            p Don't have an account?
+                            a(href="/register") Sign up
+                .welcome-message
                      h2 Welcome to Our Project
                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget ante vel ligula feugiat hendrerit at sed justo.
