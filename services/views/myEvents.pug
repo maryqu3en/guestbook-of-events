@@ -20,7 +20,7 @@ html(lang="en")
         li 
             a(href="/posts/addEvent") Add events   
       .profile 
-        img(src=usersInformation.image, alt=usersInformation.name + " Image" )
+        img(src=userInformation.image, alt=userInformation.name + " Image" )
       .menu
         span.material-symbols-outlined
             | widgets
@@ -29,6 +29,7 @@ html(lang="en")
             | close
     main.posts
      each post , index in posts
+      - if (post.postId)
         .Post
             .post
                 .post-content
@@ -61,7 +62,8 @@ html(lang="en")
                   span.material-symbols-outlined
                                 | more_horiz
                 .comment
-                  each comment  in post.comments
+                  if post.comments && Array.isArray(post.comments)
+                    each comment , commentId in post.comments
                           .comment-content
                             .profile 
                                 img(src=userInformation.image, alt=userInformation.name + " Image" )  
@@ -118,7 +120,7 @@ html(lang="en")
                 | close
             .btns2  
                 button(type="submit")
-                    a(href="/posts/updateEvent") 
+                    a(href=`/posts/updateEvent/${userInformation.id}`) 
                         span.material-symbols-outlined
                                 | edit
                 button(type="submit")

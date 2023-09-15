@@ -24,7 +24,7 @@ Router.get("/myEvents/:id",(req , res)=>{
     const findPosts = data.posts.filter(userPost=>userPost.id==id)
     console.log(data.posts)
     if (findPosts != -1) {
-        return res.render('myEvents', { posts: findPosts, users: data.users , userInformation : userLoged});
+        return res.render('myEvents',{ posts: data.posts,users:data.users , userInformation : userLoged});
     }else {
         return res.status(404).json({message : "user not found"})
     }
@@ -32,10 +32,10 @@ Router.get("/myEvents/:id",(req , res)=>{
 Router.get("/addEvent",(req , res)=>{
     return res.render('createEvent', { posts: data.posts, users: data.users , userInformation : userLoged});
 })
+Router.get("/myEvents/:id", (req, res) => {
+    return res.render('myEvents', { post, users: data.users, userInformation: userLoged });
+});
 
-Router.get("/updateEvent",(req , res)=>{
-    return res.render('updateEvent', { posts: data.posts, users: data.users , userInformation : userLoged});
-})
 
 Router.post( "/add/:id" , (req , res)=>{
     const {id} = req.params
@@ -45,7 +45,7 @@ Router.post( "/add/:id" , (req , res)=>{
     if (findUserPost != -1) {
         data.posts.push({id , text , image , postId})
         fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data, null, 2))
-        return res.status(200).json(data)
+        return;
     } else {
         return res.status(404).json({message : "id not found"})
     }
