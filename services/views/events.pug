@@ -58,7 +58,8 @@ html(lang="en")
             .comments 
                 h2 Comments
                 .comment
-                  each comment , commentIndex in post.comments
+                  if post.comments && Array.isArray(post.comments)
+                    each comment , commentId in post.comments
                           .comment-content
                             .profile 
                                 img(src=comment.userImage || "", alt=comment.userName + " Image" )
@@ -66,13 +67,13 @@ html(lang="en")
                                     p=comment.userName || ""
                                     p=comment.comment || "No comments yet"
                             .delete-update 
-                                form(action=`/comments/delete/${post.postId}/${comment.commentId}`, method="delete" )
+                                form(action=`/comments/delete/${post.postId}/${comment.commentId}`, method="POST" )
                                   span.material-symbols-outlined
                                     | close
-                                form(action="/updateComment", method="post" )    
+                                form(action=`/comments/update/${post.postId}/${comment.commentId}`, method="POST" )    
                                   span.material-symbols-outlined
                                     | edit 
-                                form(action="/add-reaction", method="post" )     
+                                form(action="/add-reaction", method="POST" )     
                                   img(src="/images/add-reaction.png", alt="add-reaction" width="20px" height="20px")  
                                   .reactions2 
                                     img(src="/images/like.png", alt="like" width="40px" height="40px" )
@@ -83,7 +84,7 @@ html(lang="en")
                                     img(src="/images/angry.png", alt="angry" width="30px" height="30px")          
 
                 .add-comment 
-                  form(action=`/comments/add/${post.postId}`, method="post")
+                  form(action=`/comments/add/${post.postId}`, method="POST")
                     input(type="text" name="comment" placeholder="Add comment...")
                     button.add(type="submit") Add
 

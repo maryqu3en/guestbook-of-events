@@ -21,7 +21,6 @@
 
     & .reactions,& .reactions2{
         position: absolute;
-        transform: translate(-50%,0%);
         background-color: #fff8f8;
         padding: 1px;
         border-radius: 20px;  
@@ -121,6 +120,7 @@
             max-height: 400px;
             overflow-y: scroll;
            & .comment-content{
+            position: relative;
             display: flex;
             justify-content: space-between;
             background-color: #b6bec1;
@@ -175,6 +175,7 @@
                 }
                 & .reactions2{
                        display: flex; 
+                       right: 0;
                        align-items: center;
                        display: none;
                        

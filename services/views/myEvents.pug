@@ -21,6 +21,7 @@ html(lang="en")
             a(href="/posts/addEvent") Add events   
       .profile 
         img(src=userInformation.image, alt=userInformation.name + " Image" )
+        img(src=userInformation.image, alt=userInformation.name + " Image" )
       .menu
         span.material-symbols-outlined
             | widgets
@@ -29,6 +30,7 @@ html(lang="en")
             | close
     main.posts
      each post , index in posts
+      - if (post.postId)
         .Post
             .post
                 .post-content
@@ -55,26 +57,28 @@ html(lang="en")
                                 | bookmark
                             span.material-symbols-outlined
                                 | maps_ugc
-                .update-delete 
-                  .container
-                    span.material-symbols-outlined
-                      | close
-                    .btns2  
-                      button(type="submit")
-                        a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
-                          span.material-symbols-outlined
-                                  | edit
-                      button(type="submit")
-                        form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
-                          span.material-symbols-outlined
-                              | delete 
+            .update-delete 
+                .container
+                  span.material-symbols-outlined
+                    | close
+                  .btns2  
+                    button(type="submit")
+                      a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
+                        span.material-symbols-outlined
+                                | edit
+                    button(type="submit")
+                      form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
+                        span.material-symbols-outlined
+                            | delete 
+                                  
             .comments 
                 .title 
                   h2 Comments
                   span.material-symbols-outlined
                                 | more_horiz
                 .comment
-                  each comment  in post.comments
+                  if post.comments && Array.isArray(post.comments)
+                    each comment , commentId in post.comments
                           .comment-content
                             .profile 
                                 img(src=comment.userImage, alt=comment.userName + " Image" )  
@@ -125,7 +129,7 @@ html(lang="en")
                 span.material-symbols-outlined
                                 | edit 
 
-            
+    
 
     script(src="/scripts/script.js")
     script(src="/scripts/script2.js")
