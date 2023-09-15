@@ -20,7 +20,7 @@ html(lang="en")
         li 
             a(href="/posts/addEvent") Add events   
       .profile 
-        img(src=usersInformation.image, alt=usersInformation.name + " Image" )
+        img(src=userInformation.image, alt=userInformation.name + " Image" )
       .menu
         span.material-symbols-outlined
             | widgets
@@ -55,6 +55,19 @@ html(lang="en")
                                 | bookmark
                             span.material-symbols-outlined
                                 | maps_ugc
+                .update-delete 
+                  .container
+                    span.material-symbols-outlined
+                      | close
+                    .btns2  
+                      button(type="submit")
+                        a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
+                          span.material-symbols-outlined
+                                  | edit
+                      button(type="submit")
+                        form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
+                          span.material-symbols-outlined
+                              | delete 
             .comments 
                 .title 
                   h2 Comments
@@ -64,13 +77,13 @@ html(lang="en")
                   each comment  in post.comments
                           .comment-content
                             .profile 
-                                img(src=userInformation.image, alt=userInformation.name + " Image" )  
+                                img(src=comment.userImage, alt=comment.userName + " Image" )  
                                 //- check here for users
                                 .texts
-                                    p=userInformation.name
+                                    p=comment.userName
                                     p=comment.comment
                             .delete-update 
-                                form(action=`/comments/delete/${post.id}/${comment.id}`, method="delete"  )
+                                form(action=`/comments/delete/${post.postId}/${comment.commentId}`, method="delete"  )
                                   span.material-symbols-outlined
                                     | close
                                 form(action="/updateComment", method="post" )    
@@ -87,7 +100,7 @@ html(lang="en")
                                     img(src="/images/angry.png", alt="angry" width="30px" height="30px")          
 
                 .add-comment 
-                  form(action=`/add/:${post}`, method="post")
+                  form(action=`/comments/add/${post.postId}`, method="post")
                     input(type="text" placeholder="Add comment...")
                     button.add(type="submit") Add
 
@@ -112,19 +125,6 @@ html(lang="en")
                 span.material-symbols-outlined
                                 | edit 
 
-    .update-delete 
-        .container
-            span.material-symbols-outlined
-                | close
-            .btns2  
-                button(type="submit")
-                    a(href="/posts/updateEvent") 
-                        span.material-symbols-outlined
-                                | edit
-                button(type="submit")
-                      form(action=`/posts/delete/` , method="DELETE")  
-                        span.material-symbols-outlined
-                            | delete 
             
 
     script(src="/scripts/script.js")

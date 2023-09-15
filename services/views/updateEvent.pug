@@ -31,14 +31,14 @@ html(lang="en")
 
         main.add 
             h1 Update Post
-            form(action=`/posts/updateEvent`, method="POST")
+            form(action=`/posts/updateEvent/${userInformation.id}/${post.postId}`, method="POST")
                 .group            
                     label(for="name") Description
-                    input(type="text", id="name", name="name" ,placeholder=post.text, required)
+                    input(type="text", id="text", name="text" ,placeholder=post.text, required)
                 .group
                     label(for="image") Image
                     input(type="url", id="image", name="image", placeholder=post.image, required)
-                button.btn(type="submit") Update
+                    button.btn(type="submit") Update
         .account 
             .container
                 span.material-symbols-outlined

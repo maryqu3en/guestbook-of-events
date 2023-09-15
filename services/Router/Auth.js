@@ -29,11 +29,10 @@ Router.post("/check",(req , res)=>{
     const accountIndex = data.users.findIndex(userEmail=>userEmail.email === email)
     if (accountIndex != -1) {
         if (data.users[accountIndex].password === password) {
-            data.users[accountIndex].isLoged = true
-            for (let index = 0; index < data.users.length; index++) { //verify later !!!!!!
-                if (index != accountIndex) 
-                    data.users[accountIndex].isLoged = false
+            for (let index = 0; index < data.users.length; index++) {
+                data.users[index].isLoged = false
             }
+            data.users[accountIndex].isLoged = true
             fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
             return res.status(200).json({account : data.users[accountIndex]})
         }else {

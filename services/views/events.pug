@@ -33,10 +33,10 @@ html(lang="en")
             .post
                 .post-content
                     .profile 
-                      img(src=users[index].image, alt=users[index].name + " Image" )
-                      p=users[index].name
+                      img(src=post.userImage, alt=post.userName + " Image" )
+                      p=post.userName
                     img(src=post.image, alt='Post Image')
-                    p=post.text
+                    p=post.text || "No desciption"
                 .comment-imojis 
                     .imojis 
                         .left
@@ -61,12 +61,12 @@ html(lang="en")
                   each comment , commentIndex in post.comments
                           .comment-content
                             .profile 
-                                img(src=users[index].image, alt=users[index].name + " Image" )
+                                img(src=comment.userImage || "", alt=comment.userName + " Image" )
                                 .texts
-                                    p=users[index].name
-                                    p=comment.comment
+                                    p=comment.userName || ""
+                                    p=comment.comment || "No comments yet"
                             .delete-update 
-                                form(action=`/comments/delete/${post.id}/${comment.id}`, method="post" )
+                                form(action=`/comments/delete/${post.postId}/${comment.commentId}`, method="delete" )
                                   span.material-symbols-outlined
                                     | close
                                 form(action="/updateComment", method="post" )    

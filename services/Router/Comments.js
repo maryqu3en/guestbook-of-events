@@ -11,6 +11,8 @@ Router.use(cors())
 Router.use(bodyParser.urlencoded({extended : true}))
 Router.use(express.urlencoded({extended : true}))
 
+const userLoged = data.users.find(userLoged => userLoged.isLoged == true)
+
 Router.get('/showcomments', (req,res) => {
     return res.status(200).json({allComment : data.comments})
 })
@@ -20,14 +22,16 @@ Router.post("/add/:postId", (req,res) => {
     const {comment} = req.body
     const commentId = Math.floor(Math.random() * 10000)
     const findPostComment = data.posts.findIndex(commentIndex => commentIndex.postId == postId)
+    const userName = userLoged.name
+    const userImage = userLoged.image
     if (findPostComment != -1) {
         if (data.posts[findPostComment].comments) 
-        data.posts[findPostComment].comments.push({commentId , comment}) 
+        data.posts[findPostComment].comments.push({commentId , comment, userName, userImage}) 
         else
-        data.posts[findPostComment].comments = [{commentId , comment}]
+        data.posts[findPostComment].comments = [{commentId , comment, userImage, userName}]
 
         fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
-        return res.status(200).json(data)
+        res.redirect(`/posts/allpost`)
     } else {
         return res.status(404).json({message : "Post not found"})
     }    
