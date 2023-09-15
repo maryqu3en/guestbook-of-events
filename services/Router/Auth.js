@@ -16,7 +16,7 @@ Router.post("/create" ,  (req , res)=>{
     const id = Math.floor(Math.random() * 100000) ;
     const dataExist = data.users.findIndex((data)=> data.email == email)
     if (dataExist != -1) {
-      return res.status(404).json({error : "This Compte exist"})
+      return res.status(404).json({error : "This account already exists."})
     } else {
       data.users.push({id , email , password , name , image})
       fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
@@ -31,10 +31,10 @@ Router.post("/check",(req , res)=>{
         if (data.users[accountIndex].password === password) {
             return res.status(200).json({account : data.users[accountIndex]})
         }else {
-            return res.status(404).json({message : "incorrect password"})
+            return res.status(404).json({message : "Incorrect password"})
         }
     }else {
-        return res.status(404).json({message : "account no exist"})
+        return res.status(404).json({message : "This account doesn't exist."})
     }
 })
 

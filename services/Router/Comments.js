@@ -29,7 +29,7 @@ Router.post("/add/:postId", (req,res) => {
         fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
         return res.status(200).json(data)
     } else {
-        return res.status(404).json({message : "id not found"})
+        return res.status(404).json({message : "Post not found"})
     }    
 })
 

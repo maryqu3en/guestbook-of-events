@@ -20,7 +20,7 @@ Router.get("/myEvents", (req , res)=>{
     return res.render('myEvents', { posts: data.posts, users: data.users });
 })
 
-Router.get("/getsingle/:id",(req , res)=>{
+Router.get("/myEvents/:id",(req , res)=>{
     const {id} = req.params 
     const findPosts = data.posts.filter(userPost=>userPost.id==id)
     console.log(data.posts)

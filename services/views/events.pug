@@ -83,8 +83,8 @@ html(lang="en")
                                     img(src="/images/angry.png", alt="angry" width="30px" height="30px")          
 
                 .add-comment 
-                  form(action="/addComment", method="post")
-                    input(type="text" placeholder="Add comment...")
+                  form(action=`/comments/add/${post.postId}`, method="post")
+                    input(type="text" name="comment" placeholder="Add comment...")
                     button.add(type="submit") Add
 
     .account 

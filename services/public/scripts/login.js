@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let password = passwordInput.value;
 
     console.log("emailbox.value");
-    if (!username || !password) {
+    if (!email || !password) {
       alertMsg.textContent = "Please fill in all required fields.";
       alertBox.style.display = "flex";
       event.preventDefault();
