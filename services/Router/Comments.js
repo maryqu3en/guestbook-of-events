@@ -27,8 +27,7 @@ Router.post("/add/:postId", (req,res) => {
         data.posts[findPostComment].comments = [{commentId , comment}]
 
         fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
-        // window.location.reload();
-        return;
+        return res.status(200).json(data)
     } else {
         return res.status(404).json({message : "Post not found"})
     }    
@@ -49,7 +48,7 @@ Router.put("/update/:postId/:commentId", (req,res) => {
 })
 
 Router.delete("/delete/:postId/:commentId", (req,res) => {
-    const { commentId , postId} = req.params
+    const { postId, commentId } = req.params
     const findPost = data.posts.findIndex(postIndex => postIndex.postId == postId)
     const findComment = data.posts[findPost].comments.findIndex(commentIndex => commentIndex.commentId == commentId)
     if ( findComment != -1 ) {
