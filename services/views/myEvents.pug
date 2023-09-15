@@ -18,7 +18,7 @@ html(lang="en")
         li
           a(href="/posts/allpost") All Events
         li 
-            a(href="/addEvent") Add events   
+            a(href="/posts/addEvent") Add events   
       .profile 
         img(src=users[0].image, alt=users[0].name + " Image" )
       .menu
@@ -117,13 +117,14 @@ html(lang="en")
                 | close
             .btns2  
                 button(type="submit")
-                    a(href="/updatePost") 
+                    a(href="/posts/updateEvent") 
                         span.material-symbols-outlined
                                 | edit
                 button(type="submit")
-                    a(href="/posts/allPosts") 
+                      form(action=`/posts/delete/` , method="DELETE")  
                         span.material-symbols-outlined
                             | delete 
             
 
     script(src="/scripts/script.js")
+    script(src="/scripts/script2.js")

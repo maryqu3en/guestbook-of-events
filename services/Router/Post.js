@@ -30,6 +30,13 @@ Router.get("/myEvents/:id",(req , res)=>{
         return res.status(404).json({message : "user not found"})
     }
 })
+Router.get("/addEvent",(req , res)=>{
+    return res.render('createEvent',{ posts: data.posts, users: data.users });
+})
+
+Router.get("/updateEvent",(req , res)=>{
+    return res.render('updateEvent',{ posts: data.posts, users: data.users });
+})
 
 Router.post( "/add/:id" , (req , res)=>{
     const {id} = req.params
@@ -38,7 +45,7 @@ Router.post( "/add/:id" , (req , res)=>{
     const findUserPost = data.users.findIndex(accountIndex => accountIndex.id == id)
     if (findUserPost != -1) {
         data.posts.push({id , text , image , postId})
-        fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
+        fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data, null, 2))
         return res.status(200).json(data)
     } else {
         return res.status(404).json({message : "id not found"})
@@ -52,7 +59,7 @@ Router.put("/update/:id" , (req , res)=>{
     if (findPostIndex != -1) {
         data.posts[findPostIndex].text = text || data.posts[findPostIndex].text
         data.posts[findPostIndex].image = image || data.posts[findPostIndex].image
-        fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
+        fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data, null, 2))
         return res.status(200).json(data)
     }else {
         return res.status(404).json({message : "post not find"})
@@ -64,7 +71,7 @@ Router.delete("/delete/:id" , (req , res) => {
     const findPostIndex = data.posts.findIndex(post => post.postId == id)
     if (findPostIndex != -1) {
         data.posts.splice(findPostIndex , 1)
-        fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data))
+        fs.writeFileSync(path.resolve(__dirname , "../model/data.json") , JSON.stringify(data, null, 2))
         return res.status(200).json(data)
     }else {
         return res.status(404).json({message : "post not found"})

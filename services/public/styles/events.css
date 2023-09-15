@@ -249,6 +249,9 @@
       flex-direction: column;
       gap: .5rem;
       padding: 0 1rem;
+      & form{
+        color: white;
+      }
       & span{
         font-size: 2rem;
         cursor:pointer;
