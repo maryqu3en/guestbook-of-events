@@ -4,14 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
 :root{
     /* Colors */
-
 --Desaturated-Red: hsl(0, 36%, 70%);
 --Dark-Grayish-Red: hsl(0, 6%, 24%);
 --Costume-green-color: #155263;
 --Desaturated-gray-color: rgb(133, 132, 130);;
-
     /* Fonts */
-
 --Font-size: 16px;
 --Font-Family: 'Josefin Sans',sans-serif;
 --Font-Weight-normal: 300;
@@ -23,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 body{
     width: 100%;
@@ -32,8 +30,6 @@ body{
     background: linear-gradient(35deg,rgba(61, 88, 73, 0.5) 0%,rgba(226, 226, 226, 0.8) 25%, rgba(246, 111, 131, 0.2) 85%, rgba(174, 185, 249, 0.1) 100%);
     background-repeat: no-repeat;
     overflow-x: hidden;
-
-   
     &  > nav{
     display: flex;
     align-items: center;
@@ -41,7 +37,6 @@ body{
     padding: 3rem 4rem;
     background-color:transparent;
     height: 40px;
-
    & .logo{
         display: flex;
         align-items: end;
@@ -56,8 +51,6 @@ body{
             color: #155263;
         }
     }
-
-
     & > ul{
         list-style: none;
         text-decoration: none;
@@ -66,7 +59,6 @@ body{
         justify-content: center;
         gap: 2rem;
         margin-right: 2rem;
-
         & > li a{
             text-decoration: none;
             text-transform: uppercase;
@@ -75,15 +67,13 @@ body{
             position: relative;
             transition: .3s;
             transform: scale(1.1);
+            padding:10px;
             &:hover{
-                padding:10px;
                 color: #e0c4c3;
                 border-radius: 30px;
                 background-color: var(--Costume-green-color);
             } 
         }
-
-        
     }
     & .profile{
         border-radius: 50%;
@@ -93,7 +83,8 @@ body{
         right:2%;
         cursor: pointer;
         color: #155263;
-    
+        background-size: contain;
+        transform: scale(1.2);
         &:hover{
             opacity: .8;
         }
@@ -101,8 +92,12 @@ body{
            font-size: 2.5rem;
             margin-top: -2px;
         }
+        & > img{
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;      
+        }  
     }
-
     & > .menu , & .close{
         display: none;
         & span{
@@ -113,14 +108,11 @@ body{
        
     }
 }
-
-
     & > main{
        margin: 9% 1% 10% 5%;
         display: flex;
         justify-content: space-between;
         gap: 3rem;
-
        & > .image{
         width: 100%;
         display: grid;
@@ -139,30 +131,25 @@ body{
             }
         }
        }
-
        & > .description{
         padding: 2rem 0;
         width: 80%;
         & .container{
-        white-space: wrap;
-            
+        white-space: wrap;    
         &  h1{
             color: var(--Dark-Grayish-Red);
             margin-bottom: 3rem;
             font-size: 3rem;
         }
-
         &  p{
             line-height: 1.6;
             color: rgb(133, 132, 130);
-            
         }
+
         & > .btns{
             display: flex;
             gap: 2rem;
             margin-top: 1.7rem;
-
-
             & > button {
             background-color:var(--Costume-green-color);
             color:white;
@@ -175,7 +162,6 @@ body{
             text-transform: uppercase ;
             transition: .3s;
             font-weight: var(--Font-Weight-medium);
-
             &:hover{
             transform: scale(1.2);  
             background-color:#e0c4c3;
@@ -192,16 +178,13 @@ body{
     }
        }
     }
-
 }
 }
 
 @media (max-width:650px) {
     body{
-       
         &  nav{
-            padding: 1.5rem 1rem;
-
+            padding: 2rem 1rem;
             & > .logo{
                 & h2{
                     font-size: 1rem;
@@ -225,21 +208,20 @@ body{
                 gap: 30px;
                 color: white;  
                 display: none;       
-                   
             }
             & > .active{   
                 right:20px;
                display: flex;
             }
-
                   & .menu{
                     display: flex;
                   }
-                  & .profile{          
-                    right: 4rem;       
+                  & .profile{    
+                    height: 35px;
+                    width: 35px;      
+                    right: 4rem;     
                 }
             }
-
             & main{
                 display: flex;
                 flex-direction: column;
@@ -255,7 +237,6 @@ body{
                 & > h1{
                     font-size: 2.7rem;
                 }
-
                 & > .btns{
                     justify-content: center;
 
@@ -265,7 +246,6 @@ body{
                 }
             }
         }
-
                 & > .image{
                 display: flex;
                 flex-direction: column;
