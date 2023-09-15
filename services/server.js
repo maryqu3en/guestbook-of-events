@@ -29,6 +29,7 @@ app.get("/register", (req, res) => {
 app.use("/Auth",authRouter)
 app.use("/posts" , postsRouter)
 app.use("/comments",commentsRouter)
+
 app.listen(PORT , ()=>{
     console.log(`server is runing on: http://localhost:${PORT}`)
 })

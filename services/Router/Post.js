@@ -13,11 +13,12 @@ Router.use(bodyParser.urlencoded({extended : true}))
 Router.use(express.urlencoded({extended : true}))
 
 Router.get("/allpost" , (req , res)=>{
-    return res.render('events',{ posts: data.posts,users:data.users,comments:data.comments});
+    return res.render('events',{ posts: data.posts,users:data.users});
 })
 
 Router.get("/myEvents", (req , res)=>{
-    return res.render('myEvents', { posts: data.posts, users: data.users });
+    const userLoged = data.users.find(userLoged => userLoged.isLoged == true)
+    return res.render('myEvents', { posts: data.posts, users: data.users , userInformation : userLoged});
 })
 
 Router.get("/myEvents/:id",(req , res)=>{
