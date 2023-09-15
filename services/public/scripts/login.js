@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("awaiting response");
       if (response.ok) {
         console.log("Logged in successfully");
+        window.location.href = "/posts/allpost";
       } else {
         alertMsg.textContent = data.message;
         alertBox.style.display = "flex";

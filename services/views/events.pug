@@ -16,11 +16,11 @@ html(lang="en")
         li
           a(href="/") Home
         li
-          a(href="/posts/myEvents") My Events
+          a(href=`/posts/myEvents/${userInformation.id}`) My Events
         li 
           a(href="/posts/addEvent") Add events  
       .profile 
-        img(src=users[0].image, alt=users[0].name + " Image" )
+        img(src=userInformation.image, alt=userInformation.name + " Image" )
       .menu
         span.material-symbols-outlined
             | widgets
@@ -66,7 +66,7 @@ html(lang="en")
                                     p=users[index].name
                                     p=comment.comment
                             .delete-update 
-                                form(action="/deleteComment", method="post" )
+                                form(action=`/comments/delete/${post.id}/${comment.id}`, method="post" )
                                   span.material-symbols-outlined
                                     | close
                                 form(action="/updateComment", method="post" )    
@@ -91,13 +91,13 @@ html(lang="en")
       .container
           span.material-symbols-outlined
             | close
-          img(src=users[0].image, alt="user image")
+          img(src=userInformation.image, alt="user image")
           h2 Username
-            p=users[0].name 
+            p=userInformation.name 
           h2 Email  
-            p=users[0].email 
+            p=userInformation.email 
           h2 Password
-            p=users[0].password 
+            p=userInformation.password 
           .btns2  
             button(type="submit")
               a(href="/") 

@@ -61,6 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("awaiting response");
       if (response.ok) {
         console.log("Account created successfully");
+        alertMsg.textContent = "Account created successfully! You can now log in to your account.";
+        alertBox.style.display = "flex";
+        closeBtn.addEventListener("click", () => {
+          if (response.ok) {
+            window.location.href = "/login";
+          }
+        });
+        
       } else {
         console.error(data.error);
       }
