@@ -96,6 +96,18 @@ body {
 
 .welcome-message h2 {
   color: #ffb3ab;
+  text-align: center;
+  font-family: Ultra;
+  font-weight: 200;
+}
+
+.welcome-message p {
+  font-size: 1.8rem;
+  color: white;
+  text-align: center;
+  margin-top: 1.4rem;
+  line-height: 3rem;
+  padding: 2rem;
 }
 
 .login-form h2 {

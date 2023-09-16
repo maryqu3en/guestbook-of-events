@@ -45,28 +45,63 @@ deletePost.addEventListener("click", function (event) {
     });
 });
 
-const deleteComment = document.querySelectorAll(".delete-comment");
-const editComment = document.querySelectorAll(".edit-comment");
+deletePost.addEventListener('click', () => {
+  location.reload();
+})
 
-async function deleteComments(postId) {
-  try {
-    const response = await fetch(`${API_URL}/delete-post/${postId}`, {
-      method: "POST",
-    });
+const deleteComment = document.getElementById("#comment-delete");
+const editComment = document.getElementById(".comment-edit");
 
-    if (response.ok) {
-      console.log("Post deleted successfully");
-      fetchPosts();
+deleteComment.addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log("inside comment event listener");
+
+  const form = document.querySelector("form[method='DELETE']");
+
+  // Define the form submission options, including the method
+  const options = {
+    method: "DELETE",
+    // You can add headers or other options here if needed
+  };
+
+  // Send the DELETE request to the form's action URL
+  fetch(form.action, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
       location.reload();
-    } else {
-      const data = await response.json();
-      console.error(data.message);
-    }
-  } catch (error) {
-    console.error("Error deleting post:", error);
-  }
-}
+      return response.json();
+    })
+    .then((responseData) => {
+      console.log(responseData);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
 
+
+
+
+// async function deleteComments(postId) {
+//   try {
+//     const response = await fetch(`${API_URL}/delete-post/${postId}`, {
+//       method: "POST",
+//     });
+
+//     if (response.ok) {
+//       console.log("Post deleted successfully");
+//       fetchPosts();
+//       location.reload();
+//     } else {
+//       const data = await response.json();
+//       console.error(data.message);
+//     }
+//   } catch (error) {
+//     console.error("Error deleting post:", error);
+//   }
+// }
 // deleteComment.forEach(function (deleteComment) {
 //   closeButton.addEventListener("click", function () {
 //     const formId = deleteComment.closest("form").id;

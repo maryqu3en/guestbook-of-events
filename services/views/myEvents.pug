@@ -85,8 +85,8 @@ html(lang="en")
                                     p=comment.userName
                                     p=comment.comment
                             .delete-update 
-                                form(id=`delete-comment-${comment.commentId}`, action=`/comments/delete/${post.postId}/${comment.commentId}`, method="delete"  )
-                                  span.material-symbols-outlined.delete-comment
+                                form(id=`delete-comment-${comment.commentId}`, action=`/comments/delete/${post.postId}/${comment.commentId}`, method="DELETE")
+                                  span.material-symbols-outlined
                                     | close
                                 form(id=`edit-comment-${comment.commentId}`, action="/updateComment", method="post" )    
                                   span.material-symbols-outlined.edit-comment
@@ -103,7 +103,7 @@ html(lang="en")
 
                 .add-comment 
                   form(action=`/comments/add/${post.postId}`, method="post")
-                    input(type="text" placeholder="Add comment...")
+                    input(type="text" name="comment" placeholder="Add comment...")
                     button.add(type="submit") Add
 
     .account 
