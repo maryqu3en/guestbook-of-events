@@ -35,6 +35,7 @@ Router.get("/myEvents/:id", (req, res) => {
     return res.status(404).json({ message: "user not found" });
   }
 });
+
 Router.get("/addEvent", (req, res) => {
   return res.render("createEvent", {
     posts: data.posts,

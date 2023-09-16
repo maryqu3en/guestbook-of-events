@@ -64,8 +64,8 @@ html(lang="en")
                             .profile 
                                 img(src=comment.userImage || "", alt=comment.userName + " Image" )
                                 .texts
-                                    p=comment.userName || ""
-                                    p=comment.comment || "No comments yet"
+                                    p=comment.userName
+                                    p=comment.comment
                             .delete-update 
                                 form(action=`/comments/delete/${post.postId}/${comment.commentId}`, method="POST" )
                                   span.material-symbols-outlined

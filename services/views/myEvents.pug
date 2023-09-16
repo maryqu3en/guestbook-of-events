@@ -81,16 +81,15 @@ html(lang="en")
                           .comment-content
                             .profile 
                                 img(src=comment.userImage, alt=comment.userName + " Image" )  
-                                //- check here for users
                                 .texts
                                     p=comment.userName
                                     p=comment.comment
                             .delete-update 
-                                form(action=`/comments/delete/${post.postId}/${comment.commentId}`, method="delete"  )
-                                  span.material-symbols-outlined
+                                form(id=`delete-comment-${comment.commentId}`, action=`/comments/delete/${post.postId}/${comment.commentId}`, method="delete"  )
+                                  span.material-symbols-outlined.delete-comment
                                     | close
-                                form(action="/updateComment", method="post" )    
-                                  span.material-symbols-outlined
+                                form(id=`edit-comment-${comment.commentId}`, action="/updateComment", method="post" )    
+                                  span.material-symbols-outlined.edit-comment
                                     | edit 
                                 form(action="/add-reaction", method="post" )     
                                   img(src="/images/add-reaction.png", alt="add-reaction" width="20px" height="20px")  
