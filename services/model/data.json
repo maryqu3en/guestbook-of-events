@@ -1,1 +1,61 @@
-{"users":[{"id":"83020","email":"user1@gmail.com","password":"password1","name":"User1","image":"https://edunewsnetwork.files.wordpress.com/2021/07/images-89.jpeg","isLoged":false},{"id":98699,"email":"kaiser@bllk.org","password":"officialclown","name":"michael kaiser","image":"https://i.pinimg.com/236x/6f/e0/1a/6fe01a07ac525db2868038f3d9af6a3f.jpg","isLoged":true},{"id":32740,"email":"otoya@bllk.org","password":"deepboy","name":"otoya","image":"https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg","isLoged":false}],"posts":[{"id":"98699","text":"☆ ★ ✮ ★ ☆","image":"https://i.pinimg.com/236x/30/8b/ff/308bff4265c02edf81791d6d44c557b9.jpg","postId":2235,"userImage":"https://i.pinimg.com/236x/6f/e0/1a/6fe01a07ac525db2868038f3d9af6a3f.jpg","userName":"michael kaiser","comments":[{"commentId":4531,"comment":"ace striker","userName":"User1","userImage":"https://edunewsnetwork.files.wordpress.com/2021/07/images-89.jpeg"},{"commentId":6940,"userName":"otoya","userImage":"https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg"},{"commentId":8002,"comment":"hmmm","userName":"otoya","userImage":"https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg"}]},{"id":"32740","text":"bestie kenyu","image":"https://i.pinimg.com/564x/11/0c/08/110c08339697251c60a5fea79b9502a9.jpg","postId":9249,"userImage":"https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg","userName":"otoya","comments":[{"commentId":6357,"comment":"@kenyu","userName":"otoya","userImage":"https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg"},{"commentId":2192,"comment":"kneel before your king","userName":"michael kaiser","userImage":"https://i.pinimg.com/236x/6f/e0/1a/6fe01a07ac525db2868038f3d9af6a3f.jpg"}]}]}
+{
+  "users": [
+    {
+      "id": "83020",
+      "email": "user1@gmail.com",
+      "password": "password1",
+      "name": "User1",
+      "image": "https://edunewsnetwork.files.wordpress.com/2021/07/images-89.jpeg",
+      "isLoged": false
+    },
+    {
+      "id": 98699,
+      "email": "kaiser@bllk.org",
+      "password": "officialclown",
+      "name": "michael kaiser",
+      "image": "https://i.pinimg.com/236x/6f/e0/1a/6fe01a07ac525db2868038f3d9af6a3f.jpg",
+      "isLoged": true
+    },
+    {
+      "id": 32740,
+      "email": "otoya@bllk.org",
+      "password": "deepboy",
+      "name": "otoya",
+      "image": "https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg",
+      "isLoged": false
+    }
+  ],
+  "posts": [
+    {
+      "id": "32740",
+      "text": "bestie kenyu",
+      "image": "https://i.pinimg.com/564x/11/0c/08/110c08339697251c60a5fea79b9502a9.jpg",
+      "postId": 9249,
+      "userImage": "https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg",
+      "userName": "otoya",
+      "comments": [
+        {
+          "commentId": 6357,
+          "comment": "@kenyu",
+          "userName": "otoya",
+          "userImage": "https://i.pinimg.com/236x/12/4e/d1/124ed12537faeaa09d2a08b7a219aa58.jpg"
+        },
+        {
+          "commentId": 2192,
+          "comment": "kneel before your king",
+          "userName": "michael kaiser",
+          "userImage": "https://i.pinimg.com/236x/6f/e0/1a/6fe01a07ac525db2868038f3d9af6a3f.jpg"
+        }
+      ]
+    },
+    {
+      "id": "98699",
+      "text": "trip",
+      "image": "https://i.pinimg.com/236x/84/46/91/844691afdd02e5b056cf9ffb6e2eac50.jpg",
+      "postId": 5105,
+      "userImage": "https://i.pinimg.com/236x/6f/e0/1a/6fe01a07ac525db2868038f3d9af6a3f.jpg",
+      "userName": "michael kaiser",
+      "comments": []
+    }
+  ]
+}

@@ -72,7 +72,7 @@ html(lang="en")
                           span.material-symbols-outlined
                                 | edit
                       form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")            
-                        button.delete(type="submit")
+                        button.delete(type="submit", id="post-delete")
                           span.material-symbols-outlined
                               | delete               
                 .comment

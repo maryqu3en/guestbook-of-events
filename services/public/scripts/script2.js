@@ -15,10 +15,40 @@ function toggleAccount() {
 profile.addEventListener("click", toggleAccount);
 closeSpan.addEventListener("click", toggleAccount);
 
+const deletePost = document.getElementById("post-delete");
+
+deletePost.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const form = document.querySelector("form[method='DELETE']");
+
+  // Define the form submission options, including the method
+  const options = {
+    method: "DELETE",
+    // You can add headers or other options here if needed
+  };
+
+  // Send the DELETE request to the form's action URL
+  fetch(form.action, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      location.reload();
+      return response.json();
+    })
+    .then((responseData) => {
+      console.log(responseData);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+
 const deleteComment = document.querySelectorAll(".delete-comment");
 const editComment = document.querySelectorAll(".edit-comment");
 
-async function deletePost(postId) {
+async function deleteComments(postId) {
   try {
     const response = await fetch(`${API_URL}/delete-post/${postId}`, {
       method: "POST",

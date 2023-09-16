@@ -84,7 +84,6 @@ Router.get("/updateEvent/:id/:postId", (req, res) => {
   });
 });
 
-//  POST request to update a post
 Router.post("/updateEvent/:id/:postId", (req, res) => {
   const { id, postId } = req.params;
   const { text, image } = req.body;
@@ -106,11 +105,9 @@ Router.post("/updateEvent/:id/:postId", (req, res) => {
   res.redirect(`/posts/myEvents/${id}`);
 });
 
-// Handle DELETE request to delete a post
 Router.delete("/delete/:id/:postId", (req, res) => {
   const { id, postId } = req.params;
 
-  // Find the index of the post to delete
   const postIndex = data.posts.findIndex((post) => post.postId == postId);
 
   if (postIndex === -1) {
@@ -122,7 +119,7 @@ Router.delete("/delete/:id/:postId", (req, res) => {
     JSON.stringify(data, null, 2)
   );
 
-  res.redirect(`/posts/myEvents/${id}`);
+  res.redirect(`/posts/myEvents/${id}`)
 });
 
 
