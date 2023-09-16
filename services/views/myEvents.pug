@@ -55,26 +55,26 @@ html(lang="en")
                             span.material-symbols-outlined
                                 | bookmark
                             span.material-symbols-outlined
-                                | maps_ugc
-            .update-delete 
-                .container
-                  span.material-symbols-outlined
-                    | close
-                  .btns2  
-                    button(type="submit")
-                      a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
-                        span.material-symbols-outlined
-                                | edit
-                    button(type="submit")
-                      form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
-                        span.material-symbols-outlined
-                            | delete 
+                                | maps_ugc                             
                                   
             .comments 
                 .title 
                   h2 Comments
-                  span.material-symbols-outlined
+                  span.material-symbols-outlined(data-post-id=post.postId)
                                 | more_horiz
+                .update-delete(data-post-id=post.postId) 
+                  .container
+                    span.material-symbols-outlined(data-post-id=post.postId)
+                      | close
+                    .btns2  
+                      button(type="submit")
+                        a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
+                          span.material-symbols-outlined
+                                | edit
+                      button(type="submit")
+                        form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
+                          span.material-symbols-outlined
+                              | delete               
                 .comment
                   if post.comments && Array.isArray(post.comments)
                     each comment , commentId in post.comments
@@ -129,6 +129,9 @@ html(lang="en")
                                 | edit 
 
     
+    
+
+  
 
     script(src="/scripts/script.js")
     script(src="/scripts/script2.js")

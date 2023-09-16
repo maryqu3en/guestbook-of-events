@@ -229,7 +229,7 @@
 }
 
 .account,.update-delete{
-    width: 100vw;
+    min-width: 100%;
     height: 100vh;
     position: fixed;
     top: 0; 
@@ -305,6 +305,10 @@
     }
 }
 
+}
+
+.update-delete{
+    transform: translate(-50%,0%);
 }
 
 ::-webkit-scrollbar {
@@ -387,6 +391,9 @@
               }
             }
     }
+}
+.update-delete{
+    transform: translate(-5%,0);
 }
 
 

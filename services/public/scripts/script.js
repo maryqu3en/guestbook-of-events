@@ -19,32 +19,25 @@ function toggleMenu() {
    closeBtn.addEventListener('click', toggleMenu);
    
 
-
- const more = document.querySelectorAll('.title span');
- const  UpDel= document.querySelector('.update-delete');
- const closeMore = document.querySelectorAll('.update-delete .container span');
- let isClicked3=true;
- 
- function toggleMore(){
-   if(isClicked3){
-    UpDel.style.display='block';
-   }
-   else{
-    UpDel.style.display='none';
-   }
-   isClicked3=!isClicked3;
+const moreButtons = document.querySelectorAll('.title span[data-post-id]');
+const closeButtons = document.querySelectorAll('.container span[data-post-id]');
+function toggleMore(event) {
+  const postId = event.target.getAttribute('data-post-id');
+  const UpDel = document.querySelector(`.update-delete[data-post-id="${postId}"]`);
+  if (UpDel) {
+    UpDel.style.display = UpDel.style.display === 'block' ? 'none' : 'block';
   }
+}
 
-  // Add event listeners for each element in the "more" NodeList
-more.forEach((element) => {
+// Add event listeners for each "more" button
+moreButtons.forEach((element) => {
+  element.addEventListener('click', toggleMore);
+});
+closeButtons.forEach((element) => {
   element.addEventListener('click', toggleMore);
 });
 
-// Add event listeners for each element in the "closeMore" NodeList
-closeMore.forEach((element) => {
-  element.addEventListener('click', toggleMore);
-});
- 
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const addReactionImages = document.querySelectorAll('.reactions2 img');

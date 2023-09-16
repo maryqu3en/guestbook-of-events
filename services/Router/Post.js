@@ -124,19 +124,5 @@ Router.delete("/delete/:id/:postId", (req, res) => {
   res.redirect(`/posts/myEvents/${id}`);
 });
 
-Router.delete("/delete/:id", (req, res) => {
-  const { id } = req.params;
-  const findPostIndex = data.posts.findIndex((post) => post.postId == id);
-  if (findPostIndex != -1) {
-    data.posts.splice(findPostIndex, 1);
-    fs.writeFileSync(
-      path.resolve(__dirname, "../model/data.json"),
-      JSON.stringify(data, null, 2)
-    );
-    return res.status(200).json(data);
-  } else {
-    return res.status(404).json({ message: "post not found" });
-  }
-});
 
 module.exports = { postsRouter: Router };
