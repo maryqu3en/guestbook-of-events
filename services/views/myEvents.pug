@@ -71,8 +71,8 @@ html(lang="en")
                         a(href=`/posts/updateEvent/${userInformation.id}/${post.postId}`) 
                           span.material-symbols-outlined
                                 | edit
-                      button(type="submit")
-                        form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")  
+                      form(action=`/posts/delete/${userInformation.id}/${post.postId}` , method="DELETE")            
+                        button.delete(type="submit")
                           span.material-symbols-outlined
                               | delete               
                 .comment
