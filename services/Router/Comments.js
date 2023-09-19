@@ -1,5 +1,4 @@
 const express = require("express")
-const cors = require("cors")
 const Router = express.Router()
 const fs = require("fs");
 const path = require("path");
@@ -7,7 +6,6 @@ const bodyParser = require("body-parser")
 
 let data = JSON.parse(fs.readFileSync(path.resolve(__dirname,"../model/data.json")))
 
-Router.use(cors())
 Router.use(bodyParser.urlencoded({extended : true}))
 Router.use(express.urlencoded({extended : true}))
 
